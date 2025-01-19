@@ -6,7 +6,6 @@ import '../models/user.dart';
 
 class UserProvider with ChangeNotifier {
   User? _user;
-
   User? get user => _user;
 
   void setUser(User user) {
@@ -14,7 +13,11 @@ class UserProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  static Future<void> saveUserToLocal(User user) async {
+  static saveUserToLocal(User user) {
+
+  }
+
+  Future<void> saveToLocal(User user) async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setString('user', jsonEncode(user.toJson()));
     print(prefs.get('user'));

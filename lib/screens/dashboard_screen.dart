@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<UserProvider>(
       builder: (ctx, value, child) {
+        print(value.user);
         return SafeArea(
           child: Scaffold(
             body: Column(
@@ -24,24 +25,24 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 32),
                   ),
                 ),
-                Card(
-                  child: Text(
-                    "Email: ${value.user!.email}",
-                    style: TextStyle(fontSize: 22),
-                  ),
-                ),
-                Card(
-                  child: Text(
-                    "Password: ${value.user!.password}",
-                    style: TextStyle(fontSize: 22),
-                  ),
-                ),
-                Card(
-                  child: Text(
-                    "Token: ${value.user!.token!}",
-                    style: TextStyle(fontSize: 22),
-                  ),
-                ),
+                // Card(
+                //   child: Text(
+                //     "Email: ${value.user!.email}",
+                //     style: TextStyle(fontSize: 22),
+                //   ),
+                // ),
+                // Card(
+                //   child: Text(
+                //     "Password: ${value.user!.password}",
+                //     style: TextStyle(fontSize: 22),
+                //   ),
+                // ),
+                // Card(
+                //   child: Text(
+                //     "Token: ${value.user!.token!}",
+                //     style: TextStyle(fontSize: 22),
+                //   ),
+                // ),
                 customButton(
                   buttonLabel: 'LogOut',
                   onPressed: () {
